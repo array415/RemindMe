@@ -27,6 +27,24 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Use Twilio
+gem 'twilio-ruby'
+
+#foundation
+gem 'foundation-rails'
+
+#simple forms
+gem 'simple_form'
+
+# Use delayed job for running background jobs
+gem 'delayed_job_active_record'
+
+# Need daemons to start delayed_job
+gem 'daemons'
+
+# Use workless to use less workers on heroku
+gem "workless", "~> 1.2.2"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
