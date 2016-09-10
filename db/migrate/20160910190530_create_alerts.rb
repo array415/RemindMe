@@ -3,7 +3,7 @@ class CreateAlerts < ActiveRecord::Migration[5.0]
     create_table :alerts do |t|
       t.references :user, foreign_key: true
       t.references :med, foreign_key: true
-      t.datetime :time
+      t.datetime :alert_time
 
       t.timestamps
     end

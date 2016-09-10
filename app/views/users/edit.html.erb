@@ -1,0 +1,8 @@
+<h1>This is a User Edit page</h1>
+
+<%= simple_form_for @user do |f|%>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :phone_num %>
+  <%= f.submit %>
+<% end %>
