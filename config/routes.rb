@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
+  get '/meds/new', to: 'meds#new', as: 'new_med'
+  post '/meds', to: 'meds#create'
+
+  get '/alerts/new', to: 'alerts#new', as: 'new_alert'
+  post '/alerts', to: 'alerts#create'
+
 end
