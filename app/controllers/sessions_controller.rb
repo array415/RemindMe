@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.confirm(user_params)
     if @user
-      session[:user_id] = @user.id
-      @current_user = @user
+      login(@user)
       redirect_to user_path(@current_user)
     end
   end
