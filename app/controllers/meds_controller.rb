@@ -4,6 +4,10 @@ class MedsController < ApplicationController
     @meds = Med.where(user_id: current_user)
   end
 
+  def show
+    @med = Med.find_by_id(params[:id])
+  end
+
   def new
     @med = Med.new
     if current_user == nil

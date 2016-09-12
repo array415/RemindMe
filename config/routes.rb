@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
   get '/meds', to: 'meds#index', as: 'meds'
+  get '/meds/:id', to: 'meds#show', as: 'med'
   get '/meds/new', to: 'meds#new', as: 'new_med'
   post '/meds', to: 'meds#create'
 
