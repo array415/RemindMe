@@ -1,7 +1,12 @@
 class AlertsController < ApplicationController
 
   def index
+    
     @alerts = Alert.where(user_id: current_user)
+  end
+
+  def show
+    @alert = Alert.find_by_id(params[:id])
   end
 
   def new
@@ -13,7 +18,6 @@ class AlertsController < ApplicationController
   end
 
   def create
-    # TODO: Include med_id somewhere magically
     @alert = Alert.new(alert_params)
     current_user.alerts << @alert
     if @alert.save

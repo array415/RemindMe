@@ -2,6 +2,11 @@ class MedsController < ApplicationController
 
   def index
     @meds = Med.where(user_id: current_user)
+    @user = User.find_by_id(params[:id])
+  end
+
+  def show
+    @med = Med.find_by_id(params[:id])
   end
 
   def new
