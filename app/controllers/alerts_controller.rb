@@ -2,24 +2,18 @@ class AlertsController < ApplicationController
 
   def index
     @alerts = Alert.where(user_id: current_user)
-    if current_user == nil
-      redirect_to '/'
-    end
+    not_logged_in
   end
 
   def show
     @alert = Alert.find_by_id(params[:id])
-    if current_user == nil
-      redirect_to '/'
-    end
+    not_logged_in
   end
 
   def new
     @alert = Alert.new
     @meds = Med.find_by_user_id(current_user)
-    if current_user == nil
-      redirect_to '/'
-    end
+    not_logged_in
   end
 
   def create
@@ -35,4 +29,5 @@ class AlertsController < ApplicationController
   def alert_params
     params.require(:alert).permit(:alert_time, :med_id)
   end
+
 end

@@ -5,26 +5,22 @@ class MedsController < ApplicationController
     @user = User.find_by_id(params[:id])
     if current_user != @user
       redirect_to user_path(current_user)
-    elsif current_user == nil
-      redirect_to '/'
     end
+    not_logged_in
   end
 
   def show
     @med = Med.find_by_id(params[:id])
     if current_user.id != @med.user_id
       redirect_to user_path(current_user)
-    elsif current_user == nil
-      redirect_to '/'
     end
+    not_logged_in
 
   end
 
   def new
     @med = Med.new
-    if current_user == nil
-      redirect_to '/'
-    end
+    not_logged_in
   end
 
   def create
@@ -40,4 +36,5 @@ class MedsController < ApplicationController
   def med_params
     params.require(:med).permit(:med_name)
   end
+
 end
