@@ -1,5 +1,9 @@
 class AlertsController < ApplicationController
 
+  def index
+    @alerts = Alert.where(user_id: current_user)
+  end
+
   def new
     @alert = Alert.new
     @meds = Med.find_by_user_id(current_user)

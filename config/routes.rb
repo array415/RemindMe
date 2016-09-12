@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'users#index'
-  
+
+
   get '/users/:id', to: 'users#show', as: 'user'
   get '/signup', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get '/meds/new', to: 'meds#new', as: 'new_med'
   post '/meds', to: 'meds#create'
 
+  get '/alerts', to: 'alerts#index', as: 'alerts'
   get '/alerts/new', to: 'alerts#new', as: 'new_alert'
   post '/alerts', to: 'alerts#create'
 
