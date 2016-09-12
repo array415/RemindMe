@@ -4,6 +4,10 @@ class AlertsController < ApplicationController
     @alerts = Alert.where(user_id: current_user)
   end
 
+  def show
+    @alert = Alert.find_by_id(params[:id])
+  end
+
   def new
     @alert = Alert.new
     @meds = Med.find_by_user_id(current_user)

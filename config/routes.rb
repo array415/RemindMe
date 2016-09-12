@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post '/meds', to: 'meds#create'
 
   get '/alerts', to: 'alerts#index', as: 'alerts'
+  get '/alerts/:id', to: 'alerts#show', as: 'alert'
   get '/alerts/new', to: 'alerts#new', as: 'new_alert'
   post '/alerts', to: 'alerts#create'
 
