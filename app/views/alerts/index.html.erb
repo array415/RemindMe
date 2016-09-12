@@ -1,0 +1,7 @@
+<h1>THIS IS ALERTS SHOW IN DEVELOPMENT</h1>
+
+
+ <% @alerts.each do |alert| %>
+    <h1> <%= alert.alert_time.strftime("Your alert for #{alert.med.med_name} is scheduled for %I:%M%p") %> </h1>
+
+    <% end %>

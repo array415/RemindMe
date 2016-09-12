@@ -1,5 +1,9 @@
 class MedsController < ApplicationController
 
+  def index
+    @meds = Med.where(user_id: current_user)
+  end
+
   def new
     @med = Med.new
     if current_user == nil

@@ -1,9 +1,3 @@
 <h1>This is a show page</h1>
 
 <%= @user.name %>
-
-<% @user.meds.each do |med| %>
-  <% med.alerts.each do |alert| %>
-    <%= alert.alert_time.strftime("Your alert for #{med.med_name} is scheduled for %I:%M%p") %>
-  <% end %>
-<% end %>
