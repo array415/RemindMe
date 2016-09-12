@@ -3,10 +3,21 @@ class MedsController < ApplicationController
   def index
     @meds = Med.where(user_id: current_user)
     @user = User.find_by_id(params[:id])
+    if current_user != @user
+      redirect_to user_path(current_user)
+    elsif current_user == nil
+      redirect_to '/'
+    end
   end
 
   def show
     @med = Med.find_by_id(params[:id])
+    if current_user.id != @med.user_id
+      redirect_to user_path(current_user)
+    elsif current_user == nil
+      redirect_to '/'
+    end
+
   end
 
   def new

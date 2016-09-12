@@ -1,12 +1,17 @@
 class AlertsController < ApplicationController
 
   def index
-    
     @alerts = Alert.where(user_id: current_user)
+    if current_user == nil
+      redirect_to '/'
+    end
   end
 
   def show
     @alert = Alert.find_by_id(params[:id])
+    if current_user == nil
+      redirect_to '/'
+    end
   end
 
   def new
