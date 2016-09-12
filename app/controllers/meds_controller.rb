@@ -2,7 +2,7 @@ class MedsController < ApplicationController
 
   def new
     @med = Med.new
-    if current_user != @med.user
+    if current_user == nil
       redirect_to '/'
     end
   end
