@@ -2,6 +2,8 @@
 
 
  <% @alerts.each do |alert| %>
-    <h1> <%=link_to alert.alert_time.strftime("Your alert for #{alert.med.med_name} is scheduled for %I:%M%p"), alert_path(alert.id) %> </h1>
+    <div class="callout large">
+      <h1> <%=link_to alert.alert_time.strftime("Your alert for #{alert.med.med_name} is scheduled for %I:%M%p"), alert_path(alert.id) %> </h1>
+    </div>
 
     <% end %>
