@@ -17,7 +17,6 @@ class AlertsController < ApplicationController
   end
 
   def create
-    # TODO: Include med_id somewhere magically
     @alert = Alert.new(alert_params)
     current_user.alerts << @alert
     if @alert.save

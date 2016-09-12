@@ -12,14 +12,14 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  get '/meds', to: 'meds#index', as: 'meds'
-  get '/meds/:id', to: 'meds#show', as: 'med'
+  get '/users/:user_id/meds', to: 'meds#index', as: 'meds'
   get '/meds/new', to: 'meds#new', as: 'new_med'
+  get '/users/meds/:id', to: 'meds#show', as: 'med'
   post '/meds', to: 'meds#create'
 
   get '/alerts', to: 'alerts#index', as: 'alerts'
-  get '/alerts/:id', to: 'alerts#show', as: 'alert'
   get '/alerts/new', to: 'alerts#new', as: 'new_alert'
+  get '/alerts/:id', to: 'alerts#show', as: 'alert'
   post '/alerts', to: 'alerts#create'
 
 end

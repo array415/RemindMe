@@ -3,5 +3,5 @@
   <h2>You are currently tracking <%= @meds.count %> medications </h2>
 
 <% @meds.each do |med| %>
-  <h1><%= link_to med.med_name, med_path(med) %></h1>
+  <h1><%= link_to med.med_name, med_path(med.user_id) %></h1>
 <% end %>
