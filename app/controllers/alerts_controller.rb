@@ -5,10 +5,8 @@ class AlertsController < ApplicationController
   end
 
   def create
-    @med = Med.find(1)
     @alert = Alert.new(alert_params)
     current_user.alerts << @alert
-    @med.alerts << @alert
     if @alert.save
       redirect_to '/'
     end
