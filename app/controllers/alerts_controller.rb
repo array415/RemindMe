@@ -3,7 +3,7 @@ class AlertsController < ApplicationController
   def new
     @alert = Alert.new
     if current_user == nil
-      redirect_to '/'
+      redirect_to '/' 
     end
   end
 
