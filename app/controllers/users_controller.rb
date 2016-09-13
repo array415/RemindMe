@@ -12,6 +12,10 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    if current_user
+      redirect_to user_path(current_user)
+      flash[:error] = 'You are already logged in'
+    end
   end
 
   def create
@@ -19,7 +23,9 @@ class UsersController < ApplicationController
     if @user.save
       login(@user)
       redirect_to user_path(@user)
+      flash[:success] = 'You have successfully signed up'
     end
+
   end
 
   def edit
@@ -27,6 +33,7 @@ class UsersController < ApplicationController
     if current_user != @user
       redirect_to '/'
     end
+
   end
 
   def update

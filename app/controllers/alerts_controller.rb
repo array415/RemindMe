@@ -20,7 +20,8 @@ class AlertsController < ApplicationController
     @alert = Alert.new(alert_params)
     current_user.alerts << @alert
     if @alert.save
-      redirect_to '/'
+      redirect_to user_path(current_user)
+      flash[:success] = 'You have successfully created an Alert'
     end
   end
 
