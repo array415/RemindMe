@@ -26,6 +26,9 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to user_path(@user)
       flash[:success] = 'You have successfully signed up'
+    else
+      redirect_to new_user_path
+      flash[:error] = @user.errors.full_messages.join(", ") 
     end
   end
 

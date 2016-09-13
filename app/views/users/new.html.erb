@@ -3,7 +3,7 @@
 <%= simple_form_for @user do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
-  <%= f.input :phone_num %>
+  <%= f.input :phone_num, label: 'Phone Number' %>
   <%= f.input :password %>
   <%= f.submit %>
 <% end %>
