@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
     if current_user != @user
-      redirect_to '/'
+      redirect_to redirect_to user_path(current_user)
+      flash[:error] = 'You are not authorized to view this page'
     end
+    not_logged_in
   end
 
   def new
@@ -25,15 +27,15 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
       flash[:success] = 'You have successfully signed up'
     end
-
   end
 
   def edit
     @user = User.find_by_id(params[:id])
     if current_user != @user
-      redirect_to '/'
+      redirect_to user_path(current_user)
+      flash[:error] = 'You are not authorized to view this page'
     end
-
+    not_logged_in
   end
 
   def update
@@ -41,6 +43,14 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user)
     end
+  end
+
+  def destroy
+    @user = User.find_by_id(params[:id])
+    @user.meds.destroy_all
+    @user.alerts.destroy_all
+    @user.destroy
+    redirect_to '/'
   end
 
   private
