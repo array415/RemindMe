@@ -22,6 +22,10 @@
         <li><a href="<%= user_path(current_user) %>">Your Profile</a></li>
         <li><a href="<%= logout_path %>">Logout</a></li>
       <% end %>
+
+      <% flash.each do |key, value| %>
+        <%= value %>
+      <% end %>
     </ul>
     <%= yield %>
 
