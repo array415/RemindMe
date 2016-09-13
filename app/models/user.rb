@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :alerts
 
   validates :name, :email, :phone_num, :password, presence: true
-  validates :email, :phone_num, uniqueness: true
+  validates_uniqueness_of :phone_num, :email
+  validates_format_of :phone_num, with: /\d{3}-\d{3}-\d{4}/, message: 'Is invalid please enter a valid U.S phone number e.g.(555-555-5555)'
 
 
   before_save :strip_number
