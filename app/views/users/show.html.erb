@@ -1,5 +1,5 @@
 <h1>This is a show page</h1>
 
 <%= @user.name %>
-<p> <%= link_to 'Edit Account Information', edit_user_path(current_user) %> </p>
-<p> <%= link_to 'Delete Account', @user, method: :delete, data: {confirm: 'Are you sure?'} %></p>
+<p> <%= button_to 'Edit Account Information', edit_user_path(current_user), class: 'hollow large expanded button' %> </p>
+<p> <%= button_to 'Delete Account', @user, method: :delete, data: {confirm: 'Are you sure you want to delete your account?'}, class: 'hollow large expanded button' %></p>
