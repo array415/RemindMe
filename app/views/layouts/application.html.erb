@@ -12,6 +12,12 @@
   </head>
 
   <body>
+
+
+    <p class="remindme_title">
+      &#8478;emindMe
+    </p>
+
     <ul class="menu">
       <% if current_user == nil %>
         <li><a href="<%= new_user_path %>">Sign-Up</a></li>
@@ -27,7 +33,11 @@
         <%= value %>
       <% end %>
     </ul>
-    <%= yield %>
+
+    <div class="grid-block-wrap">
+
+      <%= yield %>
+    </div>
 
   </body>
 </html>
