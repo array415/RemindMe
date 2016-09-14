@@ -11,14 +11,21 @@
   color: #3d2645
 }
 
-
 body {
   background-color: #D6D9CE;
-  width: 80%;
-  margin-left: 10%;
+  padding: 0 15%;
+  text-align: center;
 }
 
 .test {
   width: 100%;
   background-color: black;
+}
+
+.accordion a{
+ font-size: 2em;
+}
+
+.nav_wrapper {
+  margin: 0 auto;
 }

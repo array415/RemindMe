@@ -14,11 +14,11 @@
   <body>
 
 <div class="app_wrapper">
+  <p class="remindme_title">
+    &#8478;emindMe
+  </p>
 
-    <p class="remindme_title">
-      &#8478;emindMe
-    </p>
-
+  <div class="nav_wrapper">
     <ul class="menu">
       <% if current_user == nil %>
         <li><a href="<%= new_user_path %>">Sign-Up</a></li>
@@ -29,11 +29,14 @@
         <li><a href="<%= user_path(current_user) %>">Your Profile</a></li>
         <li><a href="<%= logout_path %>">Logout</a></li>
       <% end %>
-
-      <% flash.each do |key, value| %>
-        <%= value %>
-      <% end %>
     </ul>
+  </div>
+
+  <% flash.each do |key, value| %>
+    <div class="callout success">
+      <%= value %>
+    </div>
+  <% end %>
 
   </div>
       <%= yield %>
