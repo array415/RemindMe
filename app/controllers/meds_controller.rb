@@ -2,7 +2,7 @@ class MedsController < ApplicationController
 
   def index
     @meds = Med.where(user_id: current_user)
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(params[:user_id])
     if current_user != @user
       flash[:error] = 'You are not authorized to view this page'
       redirect_to user_path(current_user)
@@ -29,9 +29,18 @@ class MedsController < ApplicationController
     @med = Med.new(med_params)
     current_user.meds << @med
     if @med.save
-      redirect_to user_path(current_user)
-      flash[:success] = 'You have successfully created an alert'
+      redirect_to meds_path(current_user)
+      flash[:success] = 'You have successfully tracked a medication'
+    else
+      redirect_to new_med_path
+      flash[:error] = @med.errors.full_messages.join(", ")
     end
+  end
+
+  def delete
+    @med = Med.find_by_id(params[:id])
+    @med.destroy
+    redirect_to meds_path(current_user)
   end
 
   private

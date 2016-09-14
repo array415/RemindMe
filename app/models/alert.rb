@@ -2,6 +2,8 @@ class Alert < ApplicationRecord
   belongs_to :user
   belongs_to :med
 
+  validates_presence_of :med, :alert_time
+
   after_create :send_text
 
   def send_text

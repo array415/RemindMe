@@ -1,13 +1,13 @@
-<h1>THIS IS MEDS INDEX IN DEVELOPMENT</h1>
+<h2>You are currently tracking <%= @meds.count %> medications </h2>
 
-  <h2>You are currently tracking <%= @meds.count %> medications </h2>
-  <%= link_to 'Track a new medication', new_med_path, class: 'button large hollow expanded' %>
+<%= link_to 'Track a new medication', new_med_path, class: 'button large hollow expanded' %>
 
 <% @meds.each do |med| %>
   <div class="callout large" data-closable>
-    <h1><%= link_to med.med_name, med_path(med.user_id) %></h1>
+    <h1><%= link_to med.med_name, med_path(med.id) %></h1>
     <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
       <span aria-hidden="true">&times;</span>
+      <%= link_to 'X' , delete_med_path(med.id), method: :delete %>
     </button>
   </div>
 <% end %>

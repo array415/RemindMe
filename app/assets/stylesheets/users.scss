@@ -6,15 +6,24 @@
 
 .remindme_title {
   text-align: center;
-  padding: 5%;
+  padding: 0 5%;
   font-size: 5em;
   color: #3d2645
 }
 
 body {
-  background-color: #D6D9CE;
+  background-color: #F5EFED;
   padding: 0 15%;
   text-align: center;
+  font-family: 'Josefin Slab' ;
+}
+
+a {
+  color: #0F0A0A;
+}
+
+a:hover {
+  color: #D96C06;
 }
 
 .test {
@@ -28,4 +37,9 @@ body {
 
 .nav_wrapper {
   margin: 0 auto;
+}
+
+.menu {
+  display: inline-block;
+  text-align: center;
 }
