@@ -15,7 +15,7 @@
 <%= link_to 'Track a new medication', new_med_path, class: 'button large hollow expanded' %>
 
 <% @meds.each do |med| %>
-  <div class="callout large">
+  <div class="callout">
     <h1><%= med.med_name %></h1>
     <p>
       You started tracking this medication on the <%= med.created_at.strftime("%eth of %B %Y") %>

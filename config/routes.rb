@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   get '/alerts/new', to: 'alerts#new', as: 'new_alert'
   get '/alerts/:id', to: 'alerts#show', as: 'alert'
   post '/alerts', to: 'alerts#create'
+  delete '/alerts/:id', to: 'alerts#destroy', as: 'destroy_alert'
 
 end

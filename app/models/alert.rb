@@ -11,8 +11,9 @@ class Alert < ApplicationRecord
     message = @client.account.sms.messages.create(
        :from => ENV["TWILIO_NUMBER"],
        :to => "+1#{user.phone_num}",
-       :body => "Hey, #{user.name}! This is a reminder from RemindMe to remind you to take #{med.med_name}"
+       :body => "Hey, #{user.name}! This is your #{alert_time.strftime("%I:%M%p")} reminder from RemindMe to make sure you to take your #{med.med_name}"
     )
+    puts message.to
   end
 
   def when_to_run

@@ -35,14 +35,14 @@
     </ul>
   </div>
 
-  <% flash.each do |key, value| %>
-    <div class="callout success">
-      <%= value %>
-    </div>
-  <% end %>
 
       <%= yield %>
 
 
+      <% flash.each do |key, value| %>
+      <div class="callout success">
+        <%= value %>
+      </div>
+      <% end %>
   </body>
 </html>
