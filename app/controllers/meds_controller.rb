@@ -1,6 +1,10 @@
 class MedsController < ApplicationController
 
   def index
+    @messages = [ 'I heard you were feeling unwell. RemindMe is here for you!',
+                  'I hate to see you feeling blue so here is my get well wish to you. Love RemindMe',
+                  'You are gonna feel so much better in no time at all!'
+                ]
     @meds = Med.where(user_id: current_user)
     @user = User.find_by_id(params[:user_id])
     if current_user != @user

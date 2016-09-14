@@ -21,7 +21,7 @@
       You started tracking this medication on the <%= med.created_at.strftime("%eth of %B %Y") %>
     </p>
     <p>
-      We hope taking this medication helps you feel better!
+      <%= @messages.sample %>
     </p>
     <%= link_to 'X' , delete_med_path(med.id), method: :delete, class: 'close-button', data: {confirm: 'Have you stopped taking this Medication?' }%>
     </button>

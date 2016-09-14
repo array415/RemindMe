@@ -13,7 +13,6 @@ class Alert < ApplicationRecord
        :to => "+1#{user.phone_num}",
        :body => "Hey, #{user.name}! This is a reminder from RemindMe to remind you to take #{med.med_name}"
     )
-    puts message.to
   end
 
   def when_to_run

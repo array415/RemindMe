@@ -8,27 +8,21 @@
   text-align: center;
   padding: 0 5%;
   font-size: 5em;
-  color: #3d2645
 }
 
 body {
-  background-color: #F5EFED;
+  background-color: #F7F4F3;
   padding: 0 15%;
   text-align: center;
   font-family: 'Josefin Slab' ;
 }
 
 a {
-  color: #0F0A0A;
+  color: #564D4A;
 }
 
 a:hover {
-  color: #D96C06;
-}
-
-.test {
-  width: 100%;
-  background-color: black;
+  color: #BA1B1D;
 }
 
 .accordion a{
@@ -37,6 +31,10 @@ a:hover {
 
 .nav_wrapper {
   margin: 0 auto;
+}
+
+.nav_wrapper a {
+  font-size: 1.5em;
 }
 
 .menu {
