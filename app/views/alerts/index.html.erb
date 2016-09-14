@@ -1,9 +1,12 @@
 <h1>THIS IS ALERTS INDEX IN DEVELOPMENT</h1>
 
+<%= link_to 'Create an Alert', new_alert_path, class: 'button large expanded hollow'%>
+
 
  <% @alerts.each do |alert| %>
+
     <div class="callout large">
       <h1> <%=link_to alert.alert_time.strftime("Your alert for #{alert.med.med_name} is scheduled for %I:%M%p"), alert_path(alert.id) %> </h1>
     </div>
 
-    <% end %>
+  <% end %>
