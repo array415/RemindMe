@@ -1,17 +1,11 @@
+
 <% if @alerts.count == 0 %>
   <p class="track">
     To schedule an alert click the Create an Alert button down below
   </p>
-<% elsif @alerts.count == 1 %>
-  <p class="track">
-    You currently have <%= @alerts.count %> alert scheduled
-  </p>
-<% else %>
-  <p class="track">
-    You currently have <%= @alerts.count %> alerts scheduled
-  </p>
 <% end %>
-<%= link_to 'Create an Alert', new_alert_path, class: 'button large expanded hollow'%>
+
+<%= link_to 'Create an Alert', new_alert_path, class: 'button large expanded hollow form-button'%>
 
 
  <% @sorted_alerts.each do |alert| %>

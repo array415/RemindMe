@@ -4,9 +4,7 @@
 
     <li class="is-active orbit-slide text-center">
       <div class="">
-        <p class="orbit_title">
-          About
-        </p>
+        <h1 class="orbit_title"> About </h1>
         <p class='orbit_text'>
           &#8478;emindMe is an app designed to make your life a tiny bit easier. <br>
           &#8478;emindMe works by tracking your medications <br>
@@ -17,11 +15,22 @@
     </li>
 
     <li class="orbit-slide text-center">
-      <p class="orbit_title">Stats</h3>
+      <h1 class="orbit_title">Stats</h1>
       <p class="orbit_text">
         We are currently helping <%= @users.count %> people <br>
         Track <%= @meds.count %> medications <br>
         With <%= @alerts.count %> alerts!
+      </p>
+    </li>
+
+    <li class="orbit-slide text-center">
+      <h1 class="orbit_title">Getting Started</h1>
+      <p class="orbit_text">
+        Using &#8478;emindMe is really simple just follow these steps <br>
+        Step One - Sign up! <br>
+        Step Two - Start tracking a medication by clicking Your Meds <br>
+        Step Three - Use your tracked medication to schedule an alert by clicking Your Alerts <br>
+        That's it! You now know how to get started using &#8478;emindMe have fun!
       </p>
     </li>
   </ul>
@@ -29,6 +38,7 @@
   <nav class="orbit-bullets">
     <button class="is-active" data-slide="0"></button>
     <button data-slide="1"></button>
+    <button data-slide="2"></button>
   </nav>
 
 </div>

@@ -8,8 +8,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @alerts = Alert.where(user_id: current_user)
+    @meds = Alert.where(user_id: current_user)
     if current_user != @user
-      redirect_to redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
       flash[:error] = 'You are not authorized to view this page'
     end
     not_logged_in

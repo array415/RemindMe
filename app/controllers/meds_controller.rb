@@ -7,11 +7,11 @@ class MedsController < ApplicationController
                 ]
     @meds = Med.where(user_id: current_user)
     @user = User.find_by_id(params[:user_id])
-    if current_user != @user
+    if not_logged_in
+    elsif current_user != @user
       flash[:error] = 'You are not authorized to view this page'
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     end
-    not_logged_in
   end
 
   def new
