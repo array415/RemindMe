@@ -8,6 +8,31 @@
 }
 
 .alert-title {
-  font-size: 5em;
+  font-size: 4em;
   font-family: 'Quicksand', sans-serif;
+}
+
+input[type=text], datetime select {
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3em;
+}
+
+.time {
+  text-align: center;
+}
+
+.simple_form label {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3em
+}
+
+.simple_form input {
+  width: 40%;
+  display: inline-block;
+}
+
+.simple_form select {
+  width: 40%;
+  display: inline-block;
 }

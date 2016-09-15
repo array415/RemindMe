@@ -1,37 +1,41 @@
+
 <% if @alerts.count == 0 %>
   <p class="track">
     To schedule an alert click the Create an Alert button down below
   </p>
-<% elsif @alerts.count == 1 %>
-  <p class="track">
-    You currently have <%= @alerts.count %> alert scheduled
-  </p>
-<% else %>
-  <p class="track">
-    You currently have <%= @alerts.count %> alerts scheduled
-  </p>
 <% end %>
-<%= link_to 'Create an Alert', new_alert_path, class: 'button large expanded hollow'%>
+
+<%= link_to 'Create an Alert', new_alert_path, class: 'button large expanded hollow form-button'%>
 
 
- <% @alerts.each do |alert| %>
+ <% @sorted_alerts.each do |alert| %>
 
-    <div class="callout large">
+    <div class="callout">
       <% if alert.alert_time < Time.now %>
+
         <p class="alert-title">
           <%= alert.med.med_name %> Alert
         </p>
         <p class="alert-text">
-          Your alert for <%= alert.med.med_name %> has was sent at <%= alert.alert_time.strftime("%I:%M%p") %>
+          Your alert for <%= alert.med.med_name %> was sent at <%= alert.alert_time.strftime("%I:%M%p") %>
         </p>
-        <%= link_to 'Delete', destroy_alert_path(alert), method: :delete %>
+        <p class="alert-text">
+          To delete this alert click below
+        </p>
+        <%= link_to 'Delete Alert', destroy_alert_path(alert), method: :delete, class: 'alert-text' %>
+
       <% else %>
+
         <p class="alert-title">
           <%= alert.med.med_name %> Alert
         </p>
         <p class="alert-text">
           <%=alert.alert_time.strftime("Your alert for #{alert.med.med_name} is scheduled for %I:%M%p") %>
         </p>
+        <p class="alert-text">
+          You'll be hearing from us soon!
+        </p>
+
       <% end %>
     </div>
 

@@ -1,9 +1,10 @@
-<h1>This is a form for Alerts</h1>
-
+<p class="alert-title">
+  Create an Alert
+</p>
 <%= simple_form_for @alert do |f| %>
-  <%= f.input :med_id do %>
-    <%= f.select :med_id, current_user.meds.map{|m| [m.med_name, m.id]}  %>
+  <%= f.input :med_id, label: 'Select a Medication' do %>
+    <%= f.select :med_id, current_user.meds.map{|m| [m.med_name, m.id]} %>
   <% end %>
-  <%= f.input :alert_time%>
-  <%= f.submit %>
+  <%= f.input :alert_time, as: :time, label: 'Select a time', style: '10%'%>
+  <%= f.submit 'Create an Alert for Today', class: 'button hollow large' %>
 <% end %>

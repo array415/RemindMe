@@ -1,5 +1,30 @@
 
-<h1>Hey, <%= current_user.name.humanize %></h1>
+<h1 class='user-title'>Hey, <%= current_user.name.humanize %></h1>
+
+<% if @alerts.count == 1 %>
+  <p class="track">
+    You currently have <%= @alerts.count %> alert scheduled
+  </p>
+<% else %>
+  <p class="track">
+    You currently have <%= @alerts.count %> alerts scheduled
+  </p>
+<% end %>
+
+
+<% if @meds.count == 1 %>
+  <p class="track">
+    You are currently tracking <%= @meds.count %> Medication
+  </p>
+<% else %>
+  <p class="track">
+    You are currently tracking <%= @meds.count %> Medications
+  </p>
+<% end %>
+
+<p class="user-text">
+  Thanks for using &#8478;emindMe we're ready to help make your life a little bit easier!
+</p>
 
 <p>
   <%= link_to 'Edit Account Information', edit_user_path(current_user), class: 'hollow large expanded button' %>

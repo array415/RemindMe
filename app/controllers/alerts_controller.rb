@@ -2,11 +2,7 @@ class AlertsController < ApplicationController
 
   def index
     @alerts = Alert.where(user_id: current_user)
-    not_logged_in
-  end
-
-  def show
-    @alert = Alert.find_by_id(params[:id])
+    @sorted_alerts = @alerts.order(alert_time: :desc)
     not_logged_in
   end
 
@@ -29,6 +25,7 @@ class AlertsController < ApplicationController
   end
 
   def destroy
+    not_logged_in
     @alert = Alert.find_by_id(params[:id])
     @alert.destroy
     redirect_to alerts_path(current_user)

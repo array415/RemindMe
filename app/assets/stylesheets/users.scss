@@ -55,5 +55,24 @@ a:hover {
 }
 
 .nav-wrapper {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #23231A;
+}
+
+.flash {
+  margin-top: 2%;
+  background-color: #ACBDBA;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3em;
+}
+
+.user-title {
+  font-size: 4em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.user-text {
+  font-size: 1.3em;
+  color: #23231A; 
+  font-family: 'EB Garamond', serif;
+  text-shadow: #FDFFF7 1px 1px;
 }
