@@ -1,13 +1,13 @@
 <% if @meds.count == 0 %>
-  <p class="med_track">
+  <p class="track">
     To start tracking a medication click the Track new Medication button down below!
   </p>
 <% elsif @meds.count == 1 %>
-  <p class="med_track">
+  <p class="track">
     You are currently tracking <%= @meds.count %> Medication
   </p>
 <% else %>
-  <p class="med_track">
+  <p class="track">
     You are currently tracking <%= @meds.count %> Medications
   </p>
 <% end %>
@@ -16,14 +16,16 @@
 
 <% @meds.each do |med| %>
   <div class="callout">
-    <h1><%= med.med_name %></h1>
-    <p>
+    <p class="medication_name">
+      <%= med.med_name %>
+    </p>
+    <p class="medication_text">
       You started tracking this medication on the <%= med.created_at.strftime("%eth of %B %Y") %>
     </p>
-    <p>
+    <p class="medication_text">
       <%= @messages.sample %>
     </p>
-    <%= link_to 'X' , delete_med_path(med.id), method: :delete, class: 'close-button', data: {confirm: 'Have you stopped taking this Medication?' }%>
+    <%= link_to 'delete', delete_med_path(med.id), method: :delete, data: {confirm: 'Have you stopped taking this Medication?' }%>
     </button>
   </div>
 <% end %>

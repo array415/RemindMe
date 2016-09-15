@@ -8,40 +8,52 @@
   text-align: center;
   padding: 0 5%;
   font-size: 5em;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: #FDFFF7 1px 1px;
 }
 
 body {
-  background-color: #F7F4F3;
+  background-color: #ACBDBA;
   padding: 0 15%;
   text-align: center;
-  font-family: 'Josefin Slab' ;
+  color: #23231A;
 }
 
 a {
-  color: #564D4A;
+  color: #23231A;
 }
 
 a:hover {
   color: #BA1B1D;
+  text-shadow: #424B54 1px 1px;
 }
 
 .accordion a{
  font-size: 2em;
 }
 
-.nav_wrapper {
-  margin: 0 auto;
-}
-
-.nav_wrapper a {
-  font-size: 1.5em;
-}
-
 .menu {
   display: inline-block;
   text-align: center;
+  font-size: 1.3em;
+  font-family: 'EB Garamond', serif;
+  text-shadow: #FDFFF7 1px 1px;
 }
 
-.about_remindme {
-  font-size: 2em;
+.orbit_text {
+  font-size: 1.3em;
+  font-family: 'EB Garamond', serif;
+}
+
+.orbit_title {
+  font-size: 4.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.orbit  {
+  margin-top: 5%;
+}
+
+.nav-wrapper {
+  border-bottom: 1px solid black;
 }
