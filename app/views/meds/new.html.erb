@@ -1,8 +1,9 @@
-<h1>This is a create Med form</h1>
-
+<p class='medication_title'>
+  Track a new Medication
+</p>
 <%= simple_form_for @med,
   url: url_for(action: 'create', controller: 'meds'),
   method: 'post' do |f| %>
-  <%= f.input :med_name %>
-  <%= f.submit %>
+  <%= f.input :med_name, label: 'Input your medications name', class: 'medication_text'%>
+  <%= f.submit 'Track Medication', class: 'button hollow large', label: 'Track Medication'%>
 <% end %>

@@ -14,16 +14,6 @@ class MedsController < ApplicationController
     not_logged_in
   end
 
-  def show
-    @med = Med.find_by_id(params[:id])
-    if current_user.id != @med.user_id
-      flash[:error] = 'You are not authorized to view this page'
-      redirect_to user_path(current_user)
-    end
-    not_logged_in
-
-  end
-
   def new
     @med = Med.new
     not_logged_in

@@ -14,7 +14,7 @@
 <%= link_to 'Create an Alert', new_alert_path, class: 'button large expanded hollow'%>
 
 
- <% @alerts.each do |alert| %>
+ <% @sorted_alerts.each do |alert| %>
 
     <div class="callout">
       <% if alert.alert_time < Time.now %>
@@ -28,7 +28,7 @@
         <p class="alert-text">
           To delete this alert click below
         </p>
-        <%= link_to 'Delete', destroy_alert_path(alert), method: :delete %>
+        <%= link_to 'Delete Alert', destroy_alert_path(alert), method: :delete, class: 'alert-text' %>
 
       <% else %>
 

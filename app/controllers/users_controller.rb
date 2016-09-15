@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     @user.meds.destroy_all
     @user.alerts.destroy_all
     @user.destroy
-    redirect_to '/'
+    redirect_to root_path
   end
 
   private

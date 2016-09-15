@@ -17,32 +17,33 @@
   </head>
 
   <body>
-<div class="nav-wrapper">
+    <div class="nav-wrapper">
 
-  <p class="remindme_title">
-    <%= link_to "\u211EemindMe", root_path%>
-  </p>
+      <p class="remindme_title">
+        <%= link_to "\u211EemindMe", root_path%>
+      </p>
 
-  <ul class="menu">
-    <% if current_user == nil %>
-      <li><a href="<%= new_user_path %>">Sign-Up</a></li>
-      <li><a href="<%= login_path %>">Log-In</a></li>
-      <% elsif current_user != nil %>
-      <li><a href="<%= meds_path(current_user) %>">Your Meds</a></li>
-      <li><a href="<%= alerts_path %>">Your Alerts</a></li>
-      <li><a href="<%= user_path(current_user) %>">Your Profile</a></li>
-      <li><a href="<%= logout_path %>">Logout</a></li>
-    <% end %>
-  </ul>
-</div>
+      <ul class="menu">
+        <% if current_user == nil %>
+          <li><a href="<%= new_user_path %>">Sign-Up</a></li>
+          <li><a href="<%= login_path %>">Log-In</a></li>
+        <% elsif current_user != nil %>
+          <li><a href="<%= meds_path(current_user) %>">Your Meds</a></li>
+          <li><a href="<%= alerts_path %>">Your Alerts</a></li>
+          <li><a href="<%= user_path(current_user) %>">Your Profile</a></li>
+          <li><a href="<%= logout_path %>">Logout</a></li>
+        <% end %>
+      </ul>
+    </div>
 
-      <%= yield %>
-
-
-      <% flash.each do |key, value| %>
-      <div class="callout success">
+    <% flash.each do |key, value| %>
+      <div class="callout flash">
         <%= value %>
       </div>
-      <% end %>
+    <% end %>
+
+    <%= yield %>
+
+
   </body>
 </html>

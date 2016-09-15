@@ -16,7 +16,7 @@
 
 <% @meds.each do |med| %>
   <div class="callout">
-    <p class="medication_name">
+    <p class="medication_title">
       <%= med.med_name %>
     </p>
     <p class="medication_text">
@@ -25,7 +25,7 @@
     <p class="medication_text">
       <%= @messages.sample %>
     </p>
-    <%= link_to 'delete', delete_med_path(med.id), method: :delete, data: {confirm: 'Have you stopped taking this Medication?' }%>
+    <%= link_to 'Delete Medication', delete_med_path(med.id), method: :delete, data: { confirm: 'Have you stopped taking this Medication?' }, class: 'medication_text'%>
     </button>
   </div>
 <% end %>
