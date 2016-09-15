@@ -16,22 +16,32 @@
 
  <% @alerts.each do |alert| %>
 
-    <div class="callout large">
+    <div class="callout">
       <% if alert.alert_time < Time.now %>
+
         <p class="alert-title">
           <%= alert.med.med_name %> Alert
         </p>
         <p class="alert-text">
-          Your alert for <%= alert.med.med_name %> has was sent at <%= alert.alert_time.strftime("%I:%M%p") %>
+          Your alert for <%= alert.med.med_name %> was sent at <%= alert.alert_time.strftime("%I:%M%p") %>
+        </p>
+        <p class="alert-text">
+          To delete this alert click below
         </p>
         <%= link_to 'Delete', destroy_alert_path(alert), method: :delete %>
+
       <% else %>
+
         <p class="alert-title">
           <%= alert.med.med_name %> Alert
         </p>
         <p class="alert-text">
           <%=alert.alert_time.strftime("Your alert for #{alert.med.med_name} is scheduled for %I:%M%p") %>
         </p>
+        <p class="alert-text">
+          You'll be hearing from us soon!
+        </p>
+
       <% end %>
     </div>
 
