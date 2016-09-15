@@ -1,9 +1,9 @@
-<h1>This is a User Create form</h1>
+<h1>Join &#8478;emindMe</h1>
 
 <%= simple_form_for @user do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :phone_num, label: 'Phone Number' %>
   <%= f.input :password %>
-  <%= f.submit %>
+  <%= f.submit class: 'button hollow' %>
 <% end %>

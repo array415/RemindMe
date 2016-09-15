@@ -20,10 +20,20 @@ class AlertsController < ApplicationController
     @alert = Alert.new(alert_params)
     current_user.alerts << @alert
     if @alert.save
-      redirect_to user_path(current_user)
+      redirect_to alerts_path(current_user)
       flash[:success] = 'You have successfully created an Alert'
+    else
+      redirect_to new_alert_path
+      flash[:error] = @alert.errors.full_messages.join(", ")
     end
   end
+
+  def destroy
+    @alert = Alert.find_by_id(params[:id])
+    @alert.destroy
+    redirect_to alerts_path(current_user)
+  end
+
 
   private
 

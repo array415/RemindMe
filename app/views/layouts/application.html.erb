@@ -4,40 +4,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "\u211eemindMe" %></title>
 
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application" %>
+    <!-- #, 'data-turbolinks-track' => false -->
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+
   </head>
 
   <body>
+<div class="nav-wrapper">
 
-<div class="app_wrapper">
+  <p class="remindme_title">
+    <%= link_to "\u211EemindMe", root_path%>
+  </p>
 
-    <p class="remindme_title">
-      &#8478;emindMe
-    </p>
+  <ul class="menu">
+    <% if current_user == nil %>
+      <li><a href="<%= new_user_path %>">Sign-Up</a></li>
+      <li><a href="<%= login_path %>">Log-In</a></li>
+      <% elsif current_user != nil %>
+      <li><a href="<%= meds_path(current_user) %>">Your Meds</a></li>
+      <li><a href="<%= alerts_path %>">Your Alerts</a></li>
+      <li><a href="<%= user_path(current_user) %>">Your Profile</a></li>
+      <li><a href="<%= logout_path %>">Logout</a></li>
+    <% end %>
+  </ul>
+</div>
 
-    <ul class="menu">
-      <% if current_user == nil %>
-        <li><a href="<%= new_user_path %>">Sign-Up</a></li>
-        <li><a href="<%= login_path %>">Log-In</a></li>
-        <% elsif current_user != nil %>
-        <li><a href="<%= meds_path(current_user) %>">Your Meds</a></li>
-        <li><a href="<%= alerts_path %>">Your Alerts</a></li>
-        <li><a href="<%= user_path(current_user) %>">Your Profile</a></li>
-        <li><a href="<%= logout_path %>">Logout</a></li>
-      <% end %>
-
-      <% flash.each do |key, value| %>
-        <%= value %>
-      <% end %>
-    </ul>
-
-  </div>
       <%= yield %>
 
 
+      <% flash.each do |key, value| %>
+      <div class="callout success">
+        <%= value %>
+      </div>
+      <% end %>
   </body>
 </html>

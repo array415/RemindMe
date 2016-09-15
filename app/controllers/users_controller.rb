@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
   def index
+    @meds = Med.all
+    @alerts = Alert.all
+    @users = User.all
   end
 
   def show
@@ -28,7 +31,7 @@ class UsersController < ApplicationController
       flash[:success] = 'You have successfully signed up'
     else
       redirect_to new_user_path
-      flash[:error] = @user.errors.full_messages.join(", ") 
+      flash[:error] = @user.errors.full_messages.join(", ")
     end
   end
 

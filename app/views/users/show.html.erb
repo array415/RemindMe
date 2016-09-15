@@ -1,11 +1,10 @@
-<h1>This is a show page</h1>
 
-<p>
-  <%= @user.name %>
-</p>
+<h1>Hey, <%= current_user.name.humanize %></h1>
+
 <p>
   <%= link_to 'Edit Account Information', edit_user_path(current_user), class: 'hollow large expanded button' %>
 </p>
+
 <p>
   <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: 'hollow large expanded button' %>
 </p>
