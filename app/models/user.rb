@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   validates :name, :email, :phone_num, :password, presence: true
   validates_uniqueness_of :phone_num, :email
+  # TODO: check validation for edits. (fun times!)
   validates_format_of :phone_num, with: /\d{3}-\d{3}-\d{4}/, message: 'Is invalid please enter a valid U.S phone number e.g.(555-555-5555)'
 
 

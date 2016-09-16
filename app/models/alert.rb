@@ -13,6 +13,7 @@ class Alert < ApplicationRecord
        :to => "+1#{user.phone_num}",
        :body => "Hey, #{user.name}! This is your #{alert_time.strftime("%I:%M%p")} reminder from RemindMe to make sure you to take your #{med.med_name}"
     )
+    # TODO: is this bugging out if removed?
     puts message.to
   end
 

@@ -1,12 +1,16 @@
 class MedsController < ApplicationController
 
   def index
+    # TODO: If you want to expand this to more content, consider putting it in an
+    # external file that you can update easily without blowing up your controller
     @messages = [ 'I heard you were feeling unwell. RemindMe is here for you!',
                   'I hate to see you feeling blue so here is my get well wish to you. Love RemindMe',
                   'You are gonna feel so much better in no time at all!'
                 ]
-    @meds = Med.where(user_id: current_user)
+
     @user = User.find_by_id(params[:user_id])
+    @meds = Med.where(user_id: current_user)
+    # TODO: play with the placement of not_logged_in
     if not_logged_in
     elsif current_user != @user
       flash[:error] = 'You are not authorized to view this page'
@@ -15,19 +19,19 @@ class MedsController < ApplicationController
   end
 
   def new
-    @med = Med.new
     not_logged_in
+    @med = Med.new
   end
 
   def create
     @med = Med.new(med_params)
     current_user.meds << @med
     if @med.save
-      redirect_to meds_path(current_user)
       flash[:success] = 'You have successfully tracked a medication'
+      redirect_to meds_path(current_user)
     else
-      redirect_to new_med_path
       flash[:error] = @med.errors.full_messages.join(", ")
+      redirect_to new_med_path
     end
   end
 

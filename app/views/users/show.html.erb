@@ -1,6 +1,11 @@
 
 <h1 class='user-title'>Hey, <%= current_user.name.humanize %></h1>
 
+<!-- TODO: THIS MAY OR MAY NOT WORK -->
+<p class="track">
+   You curently have <%= @alerts.count %> alert<%= @alerts.count>1 ? 's ': ' ' %>schedule
+</p>
+
 <% if @alerts.count == 1 %>
   <p class="track">
     You currently have <%= @alerts.count %> alert scheduled

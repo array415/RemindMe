@@ -19,6 +19,5 @@
       <%= @messages.sample %>
     </p>
     <%= link_to 'Delete Medication', delete_med_path(med.id), method: :delete, data: { confirm: 'Have you stopped taking this Medication?' }, class: 'medication_text'%>
-    </button>
   </div>
 <% end %>

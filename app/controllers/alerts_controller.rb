@@ -1,15 +1,15 @@
 class AlertsController < ApplicationController
 
   def index
+    not_logged_in
     @alerts = Alert.where(user_id: current_user)
     @sorted_alerts = @alerts.order(alert_time: :desc)
-    not_logged_in
   end
 
   def new
+    not_logged_in
     @alert = Alert.new
     @meds = Med.find_by_user_id(current_user)
-    not_logged_in
   end
 
   def create
