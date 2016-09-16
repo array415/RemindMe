@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/users/:user_id/meds', to: 'meds#index', as: 'meds'
   get '/meds/new', to: 'meds#new', as: 'new_med'
   post '/meds', to: 'meds#create'
+  #TODO: have delete model the above meds#index route
   delete '/users/meds/:id', to: 'meds#delete', as: 'delete_med'
 
   get '/alerts', to: 'alerts#index', as: 'alerts'
