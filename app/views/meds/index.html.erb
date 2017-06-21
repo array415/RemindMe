@@ -1,0 +1,24 @@
+
+<% if @meds.count == 0 %>
+  <p class="track">
+    To start tracking a medication click the Track new Medication button down below!
+  </p>
+<% end %>
+
+<%= link_to 'Track a new medication', new_med_path, class: 'button large hollow expanded form-button' %>
+
+<% @meds.each do |med| %>
+  <div class="callout">
+    <p class="medication_title">
+      <%= med.med_name %>
+    </p>
+    <p class="medication_text">
+      You started tracking this medication on the <%= med.created_at.strftime("%eth of %B %Y") %>
+    </p>
+    <p class="medication_text">
+      <%= @messages.sample %>
+    </p>
+    <%= link_to 'Delete Medication', delete_med_path(med.id), method: :delete, data: { confirm: 'Have you stopped taking this Medication?' }, class: 'medication_text'%>
+    </button>
+  </div>
+<% end %>

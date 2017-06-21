@@ -1,3 +1,42 @@
 // Place all the styles related to the meds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.track {
+  font-size: 1.3em;
+  color: #23231A;
+  font-family: 'EB Garamond', serif;
+  text-shadow: #FDFFF7 1px 1px;
+}
+
+.form-button {
+  margin-top: 3.5%;
+}
+.callout {
+  background-color: #FDFFF7;
+  color: #23231A;
+  border: 2px solid #23231A;
+}
+
+.medication_title {
+  font-size: 4em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.medication_text {
+  font-size: 1.3em;
+  font-family: 'EB Garamond', serif;
+}
+
+.hollow.button {
+  color: #23231A;
+  border-color: #23231A;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: #FDFFF7 1px 1px;
+}
+
+.hollow.button:hover{
+  color: #BA1B1D;
+  border-color: #BA1B1D;
+  text-shadow: #424B54 1px 1px;
+}

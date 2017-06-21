@@ -9,12 +9,14 @@ class SessionsController < ApplicationController
     if @user
       login(@user)
       redirect_to user_path(@current_user)
+      flash[:success] = 'You have successfully logged in'
     end
   end
 
   def destroy
     session[:user_id] = nil
     redirect_to '/'
+    flash[:success] = 'You have successfully logged out'
   end
 
   private

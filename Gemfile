@@ -45,8 +45,15 @@ gem 'daemons'
 # Use workless to use less workers on heroku
 gem "workless", "~> 1.2.2"
 
+# Figaro to hide all my keys
+gem "figaro"
+
+# Foundation icons
+gem 'foundation-icons-sass-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

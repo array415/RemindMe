@@ -1,3 +1,78 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.remindme_title {
+  text-align: center;
+  padding: 0 5%;
+  font-size: 5em;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: #FDFFF7 1px 1px;
+}
+
+body {
+  background-color: #ACBDBA;
+  padding: 0 15%;
+  text-align: center;
+  color: #23231A;
+}
+
+a {
+  color: #23231A;
+}
+
+a:hover {
+  color: #BA1B1D;
+  text-shadow: #424B54 1px 1px;
+}
+
+.accordion a{
+ font-size: 2em;
+}
+
+.menu {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: 'EB Garamond', serif;
+  text-shadow: #FDFFF7 1px 1px;
+}
+
+.orbit_text {
+  font-size: 1.3em;
+  font-family: 'EB Garamond', serif;
+}
+
+.orbit_title {
+  font-size: 4.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.orbit  {
+  margin-top: 5%;
+}
+
+.nav-wrapper {
+  border-bottom: 1px solid #23231A;
+}
+
+.flash {
+  margin-top: 2%;
+  background-color: #ACBDBA;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3em;
+}
+
+.user-title {
+  font-size: 4em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.user-text {
+  font-size: 1.3em;
+  color: #23231A; 
+  font-family: 'EB Garamond', serif;
+  text-shadow: #FDFFF7 1px 1px;
+}
